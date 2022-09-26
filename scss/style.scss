@@ -1,0 +1,759 @@
+@import "general";
+@import "mixins";
+@import "variables";
+
+//  ========Header Styles===========
+.header {
+    @include flex_center_content(flex, center, space-evenly);
+    background: $background-color;
+    height: 110px;
+
+    &__icons {
+        width: 340px;
+        @include flex_center;
+    }
+
+    &__icons-logo {
+        margin-right: 30px;
+    }
+
+    .nav {
+        width: 46vw;
+        @include flex_center_content(flex, center, space-around);
+
+        &__list {
+            @include flex_center;
+        }
+
+        &__list-link {
+            width: 6vw;
+            text-align: center;
+            list-style: none;
+            color: $color-white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        &__list-link:hover {
+            color: $color;
+            transition: 0.5s;
+        }
+    }
+
+    .basket {
+        width: 8vw;
+        text-align: center;
+
+        &__img {
+            width: 17px;
+            height: 17px;
+            cursor: pointer;
+        }
+
+        &__img:hover {
+            fill: $color;
+            transition: 0.5s;
+        }
+    }
+}
+
+.sprite {
+    display: flex;
+
+    &__link {
+        background: $color-white;
+        width: 45px;
+        height: 45px;
+        @include flex_center_content(flex, center, center);
+        margin: 0 5px;
+    }
+
+    &__link-img {
+        width: 12px;
+    }
+
+    &__link-img:hover {
+        fill: $color;
+        transition: 0.5s;
+    }
+}
+
+
+// =========First Page Style=========
+
+.home__page {
+    @include flex_center_content(flex, center, space-evenly);
+    background: $background-color;
+    height: 100vh;
+    padding: 60px 120px 0px 120px;
+
+    .book {
+        @include flex_column_content(flex, column, space-between);
+        width: 598px;
+        height: 500px;
+
+        &__title {
+            font-size: 1.3em;
+            color: $color-white;
+        }
+
+        &__title-main {
+            font-family: 'Cardo';
+            font-size: 64px;
+            color: $color-white;
+        }
+
+        .home__btns {
+            width: 27vw;
+            @include flex_center_content(flex, center, space-between);
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+
+            &__text {
+                height: 65px;
+                @include flex_column_content(flex, column, space-between);
+            }
+
+            &__text-title {
+                position: relative;
+                left: 10px;
+                font-size: 1.5em;
+                color: $color-white;
+            }
+
+            &__text-title::before {
+                content: "";
+                position: absolute;
+                left: -25px;
+                top: 8px;
+                width: 16px;
+                height: 16px;
+                background: $color;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .book__img {
+        width: 35vw;
+        height: 85vh;
+        object-fit: contain;
+    }
+}
+
+// =========Second Page Style=================
+
+.books {
+    @include flex_column_content(flex, column, space-around);
+    padding: 100px 10px 0 0;
+
+    &__title {
+        text-align: center;
+        position: relative;
+        font-size: 42px;
+        margin-bottom: 80px;
+    }
+
+    &__title::before {
+        content: "";
+        position: absolute;
+        top: 9vh;
+        left: 48vw;
+        width: 50px;
+        height: 3px;
+        background: $color;
+    }
+
+    &__title-content {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .shopping {
+        display: flex;
+
+        &__img {
+            width: 17vw;
+            height: 40vh;
+            object-fit: contain;
+        }
+
+        &__img-paid {
+            width: 16vw;
+            @include flex_column_content(flex, column, space-evenly);
+
+            h2 {
+                font-size: 32px;
+            }
+
+            h3 {
+                font-size: 21px;
+                color: $color;
+            }
+        }
+    }
+}
+
+// ==========Third Page style============
+
+.author {
+    @include flex_center_content(flex, center, space-evenly);
+    height: 100vh;
+    margin-top: 175px;
+    background: rgba(245, 248, 252, 1);
+
+    &__border {
+        border: 10px solid $color;
+        position: relative;
+        width: 525px;
+        height: 620px;
+    }
+
+    &__border-img {
+        width: 558px;
+        object-fit: contain;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+    }
+
+    .learnin-img {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .author-show {
+        opacity: 1;
+        transition: all 1.5s;
+        transform: translateY(0%);
+    }
+
+    .about {
+        width: 31vw;
+        height: 620px;
+        @include flex_column_content(flex, column, space-between);
+
+        &__info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__info-qr {
+            @include flex_center_content(flex, center, space-between);
+            width: 30vw;
+            background: $background-color;
+            padding: 10px;
+        }
+
+        &__info-img {
+            width: 5.5vw;
+            height: 10vh;
+        }
+
+        &__contacts {
+            width: 100%;
+            padding-left: 10px;
+            @include flex_column_content(flex, column, space-evenly);
+
+            h4 {
+                color: $color;
+            }
+
+            a {
+                text-decoration: none;
+                color: rgba(150, 154, 160, 1);
+            }
+        }
+
+        h3 {
+            font-size: 54px;
+        }
+    }
+}
+
+// ==========Fourth Page Style=============
+
+.trusted {
+    @include flex_column;
+    padding-top: 100px;
+
+    &__company {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .company {
+            width: 285px;
+            height: 254px;
+            text-align: center;
+
+            &__title {
+                margin: 15px 0;
+            }
+        }
+    }
+
+    &__company-book {
+        height: 500px;
+        margin-top: 60px;
+        @include flex_center_content(flex, center, space-evenly);
+        background: $background-color;
+        padding: 0 20px;
+
+        .copy {
+            @include flex_column_content(flex, column, space-between);
+            height: 284px;
+            width: 520px;
+
+            &__text-color {
+                color: $color-white;
+            }
+
+            &__title-btn {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+// ==========Fifth Page Style=============
+
+.learn {
+    padding-top: 100px;
+
+    &__info {
+        @include flex_center_content(flex, center, space-evenly);
+        margin-top: 17vh;
+    }
+
+    &__info-text {
+        @include flex_center_content(flex, center, space-around);
+        flex-wrap: wrap;
+        width: 37vw;
+        height: 63vh;
+    }
+
+    &__item {
+        width: 18vw;
+        height: 28vh;
+        padding: 25px;
+        @include flex_column_content(flex, column, space-evenly);
+        background: rgba(244, 248, 255, 1);
+    }
+
+    &__item-number {
+        background: $color;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        @include flex_center_content(flex, center, center);
+    }
+
+    &__item-text {
+        font-size: 18px;
+        font-family: 'Cardo';
+        color: $background-color;
+    }
+}
+
+// ========Sixth Page Style==============
+
+.knowledge {
+    margin-top: 10vh;
+    background: rgba(244, 248, 255, 1);
+    padding-top: 100px;
+
+    &__wraper {
+        @include flex_center;
+        flex-direction: column;
+    }
+
+    &__chapter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-bottom: 70px;
+    }
+
+    &__chapter-about {
+        @include flex_center_content(flex, center, space-evenly);
+        width: 36vw;
+        height: 26vh;
+        padding: 0 45px;
+        margin-bottom: 15px;
+        background: $color-white;
+    }
+
+    &__chapter-info {
+        @include flex_center_content(flex, center, space-between);
+    }
+
+    &__chapter-el {
+        @include flex_center_content(flex, center, space-around);
+        width: 50%;
+    }
+
+    &__description {
+        margin: 40px 0;
+        text-align: center;
+        width: 340px;
+    }
+
+    .knowledge-btn {
+        width: 40vw;
+    }
+}
+
+// ==============Seven Page Style==========
+.readers {
+    @include flex_center_content(flex, center, space-evenly);
+    height: 100vh;
+
+    .people__wrapper {
+        @include flex_column_content(flex, column, space-between);
+        height: 650px;
+    }
+
+    .people {
+        background: $background-color;
+        height: 292px;
+        width: 365px;
+        padding: 30px;
+
+        &__text {
+            @include flex_column_content(flex, column, space-evenly);
+            height: 180px;
+            padding-right: 45px;
+        }
+
+        &__reader {
+            color: $color-white;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        &__opinion {
+            color: $color-white;
+            font-size: 22px;
+        }
+
+        &__opinion-text {
+            color: $color-white;
+        }
+
+        &__avatar {
+            @include flex_center;
+        }
+
+        &__avatar-img {
+            width: 85px;
+            height: 85px;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+    }
+
+    .rating {
+        @include flex_column_content(flex, column, space-between);
+        width: 26vw;
+        height: 445px;
+
+        &__title {
+            font-size: 42px;
+            position: relative;
+        }
+
+        &__title::before {
+            content: "";
+            position: absolute;
+            top: 120px;
+            height: 2px;
+            width: 55px;
+            background: $color;
+        }
+
+        &__stars {
+            @include flex_column;
+        }
+
+        &__stars-block {
+            display: flex;
+        }
+
+        &__item {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: $color;
+            margin: 0 2px;
+        }
+
+        &__half {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid $color;
+            background: linear-gradient(90deg, $color 50%, rgba(255, 255, 255, 0) 50%)
+        }
+
+        &__none {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid $color;
+            background: none;
+        }
+    }
+}
+
+// ===============Eighth Page Style==========
+.slider {
+    background: rgba(244, 248, 255, 1);
+    padding-top: 100px;
+
+    .slick-list {
+        overflow: hidden;
+    }
+
+    .slick-track {
+        display: flex;
+        margin-bottom: 100px;
+    }
+
+    .opinion__slider {
+        position: relative;
+        padding: 0 100px;
+    }
+
+    .slide-img {
+        width: 100%;
+    }
+
+    .opinion__slider .slick-arrow {
+        position: absolute;
+        top: 60%;
+        margin: -50px 0px 0px 0px;
+        z-index: 5;
+        font-size: 0;
+        width: 50px;
+        height: 50px;
+    }
+
+    .slick-prev {
+        left: 6vw;
+        background-color: transparent;
+        background-image: url(../img/arrowleft.png);
+        border: none;
+        cursor: pointer;
+    }
+
+    .slick-next {
+        right: 6vw;
+        background-color: transparent;
+        background-image: url(../img/arrowrigth.png);
+        border: none;
+        cursor: pointer;
+    }
+
+    .opinion__slides {
+        margin: 0 20px;
+        @include flex_center_content(flex, center, space-between);
+        flex-direction: column;
+        background: $color-white;
+    }
+
+    .opinion__slide-wrapper {
+        @include flex_column_content(flex, column, space-evenly);
+        padding: 0 20px;
+        height: 24vh;
+    }
+
+    .slide-data {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .slider-btn {
+        color: $background-color;
+        width: 9vw;
+        height: 27px;
+        background: none;
+        border: none;
+        border-bottom: 1px solid $background-color;
+        cursor: pointer;
+    }
+
+    .slider-btn:hover {
+        color: $color;
+        transition: 0.5s;
+    }
+
+    .slide-data-text {
+        text-align: center;
+    }
+}
+
+// ===============Ninth Page Style==========
+
+.subscribe {
+    padding: 150px 0;
+
+    &__area {
+        @include flex_center_content(flex, center, space-around);
+        flex-direction: column;
+        height: 52vh;
+        margin: 0 120px;
+        background: $color;
+    }
+
+    &__title {
+        text-align: center;
+        position: relative;
+        margin-top: 40px;
+        font-size: 42px;
+    }
+
+    &__title::before {
+        content: "";
+        position: absolute;
+        top: 9vh;
+        left: 168px;
+        width: 50px;
+        height: 3px;
+        background: $background-color;
+    }
+
+    &__text {
+        text-align: center;
+        width: 560px;
+    }
+
+    .email {
+        width: 39vw;
+        height: 70px;
+        border: 1px solid rgba(220, 225, 233, 1);
+        padding: 30px;
+    }
+
+    .email::placeholder {
+        color: rgba(180, 199, 231, 1);
+    }
+
+    &__btn {
+        height: 70px;
+        width: 19vw;
+        color: $color-white;
+        background: $background-color;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__btn:hover {
+        background: rgb(54, 71, 107);
+        transition: 0.5s;
+    }
+}
+
+.footer {
+    background: $background-color;
+    height: 52vh;
+
+    &__wrapper {
+        @include flex_center_content(flex, center, space-evenly);
+        height: 90%;
+    }
+
+    &__icon {
+        @include flex_column;
+        height: 54%;
+        align-items: flex-start;
+    }
+
+    &__icon-logo {
+        margin-bottom: 20px;
+    }
+
+    &__links {
+        @include flex_column_content(flex, column, space-around);
+        height: 54%;
+    }
+
+    &__links-text {
+        color: $color-white;
+        font-size: 26px;
+        list-style: none;
+    }
+
+    &__links-link {
+        color: rgba(180, 199, 231, 1);
+        list-style: none;
+        font-size: 20px;
+        position: relative;
+        left: 30px;
+    }
+
+    &__links-link::before {
+        content: "...";
+        position: absolute;
+        left: -35px;
+        bottom: 0;
+        color: $color;
+        font-size: 40px;
+    }
+
+    &__contacts {
+        height: 54%;
+        @include flex_column_content(flex, column, space-between);
+    }
+
+    &__contacts-wrapper {
+        @include flex_column_content(flex, column, space-between);
+        height: 80%;
+    }
+
+    .adress-wrapper {
+        width: 8vw;
+    }
+
+    &__contact-text {
+        color: $color-white;
+        font-size: 26px;
+    }
+
+    &__contact-link {
+        text-decoration: none;
+        font-size: 17px;
+        color: rgba(180, 199, 231, 1);
+    }
+
+    &__by {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__by-href {
+        text-decoration: none;
+        color: $color-white;
+    }
+
+    .box {
+        border: 1px solid $color;
+        background: transparent;
+    }
+
+    .sp-img {
+        fill: $color-white;
+    }
+
+    .sp-img:hover {
+        fill: $color;
+    }
+
+}
+
+
+@import "media-quere";

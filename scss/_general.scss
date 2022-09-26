@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h2,
+h3,
+h4 {
+    font-family: 'Cardo';
+    color: rgba(27, 55, 100, 1);
+    font-size: calc(24px + 16px * (100vw / 1280));
+}
+
+h5 {
+    font-size: 24px;
+}
+
+p {
+    font-family: 'Inter';
+    color: rgba(150, 154, 160, 1);
+}
+
+button {
+    font-family: 'Cardo';
+    font-size: 1.1em;
+}
+
+// ==========Buttons===============
+.arrow__up {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 10;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.8s ease 0s;
+    box-shadow: 0 0 15px #6d7749;
+    border-radius: 50%;
+}
+
+.show_arrow {
+    opacity: 0;
+}
+
+.order__btn {
+    background: rgba(255, 202, 66, 1);
+    width: 17vw;
+    height: 7vh;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border: none;
+}
+
+.order__btn:hover {
+    background: rgb(235, 171, 12);
+    transition: 0.5s;
+}
+
+.demo__btn {
+    width: 150px;
+    height: 27px;
+    background: none;
+    border: none;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+}
+
+.demo__btn:hover {
+    color: rgba(255, 202, 66, 1);
+    transition: 0.5s;
+}
+
+.order__today-btn {
+    width: 200px;
+    height: 7vh;
+    background: none;
+    cursor: pointer;
+    border: 1px solid rgba(255, 202, 66, 1);
+}
+
+.order__today-btn:hover {
+    background: rgba(255, 202, 66, 1);
+    transition: 0.5s;
+}
+
+.yellow__dot {
+    position: relative;
+    left: 30px;
+}
+
+.yellow__dot:before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 0.8vh;
+    width: 14px;
+    height: 14px;
+    background: rgba(255, 202, 66, 1);
+    border-radius: 50%;
+}
+
+.copy__title {
+    font-size: 42px;
+    position: relative;
+}
+
+.copy__title:before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    height: 2px;
+    width: 55px;
+    background: rgba(255, 202, 66, 1);
+}
